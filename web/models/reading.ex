@@ -1,5 +1,6 @@
 defmodule Plants.Reading do
   use Plants.Web, :model
+  @derive {Poison.Encoder, only: [:value]}
 
   def changeset(model, params \\ %{}) do
     model
