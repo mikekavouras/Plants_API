@@ -1,15 +1,15 @@
 defmodule Plants.Reading do
   use Plants.Web, :model
-  @derive {Poison.Encoder, only: [:value]}
+  @derive {Poison.Encoder, only: [:moisture]}
 
   def changeset(model, params \\ %{}) do
     model
-    |> cast(params, [:value])
-    |> validate_required([:value])
+    |> cast(params, [:moisture])
+    |> validate_required([:moisture])
   end
 
   schema "readings" do
-    field :value, :integer
+    field :moisture, :integer
 
     timestamps()
   end

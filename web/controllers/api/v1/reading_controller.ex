@@ -9,9 +9,9 @@ defmodule Plants.Api.V1.ReadingController do
   end
 
   def create(conn, %{"data" => data}) do
-    {i, _} = Integer.parse(data)
-    changeset = Plants.Reading.changeset(%Plants.Reading{value: i})
+    {moisture_value, _} = Integer.parse(data)
+    changeset = Plants.Reading.changeset(%Plants.Reading{moisture: moisture_value})
     Repo.insert(changeset)
-    render(conn, "create.json", %{value: i})
+    render(conn, "create.json", %{moisture: moisture_value})
   end
 end

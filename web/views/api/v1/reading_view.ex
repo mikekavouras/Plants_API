@@ -5,7 +5,7 @@ defmodule Plants.Api.V1.ReadingView do
     %{readings: readings}
   end
 
-  def render("create.json", %{value: data}) do
-    %{value: data}
+  def render("create.json", %{moisture: data}) do
+    %{moisture: data}
   end
 end

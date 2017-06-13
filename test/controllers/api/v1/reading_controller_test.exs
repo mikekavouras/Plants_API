@@ -11,7 +11,7 @@ defmodule Plants.Api.V1.ReadingControllerTest do
   test "POST /api/v1/readings", %{conn: conn} do
     conn = post conn, "/api/v1/readings", %{data: "100"}
     assert json_response(conn, 200) == %{
-      "value" => 100
+      "moisture" => 100
     }
     assert length(Plants.Repo.all(Plants.Reading)) == 1
   end
